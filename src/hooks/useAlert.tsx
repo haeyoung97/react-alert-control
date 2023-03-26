@@ -1,5 +1,10 @@
 import { useContext, useEffect, useMemo, useRef, useState } from "react";
-import { AlertContext, AlertController } from "../context/AlertProvider";
+import {
+  AlertContext,
+  AlertController,
+  AlertControlRef,
+} from "../context/AlertProvider";
+import { CreateAlertElement } from "../types";
 
 let elementId = 1;
 export default function () {
@@ -11,7 +16,7 @@ export default function () {
 
   const { mount, unmount } = context;
   const [id] = useState(() => String(elementId++));
-  const alertRef = useRef(null);
+  const alertRef = useRef<AlertControlRef | null>(null);
 
   useEffect(() => {
     return () => {
@@ -21,7 +26,7 @@ export default function () {
 
   return useMemo(
     () => ({
-      open: (alertElement) => {
+      open: (alertElement: CreateAlertElement) => {
         mount(
           id,
           <AlertController
