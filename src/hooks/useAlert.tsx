@@ -4,7 +4,7 @@ import {
   AlertController,
   AlertControlRef,
 } from "../context/AlertProvider";
-import { CreateAlertElement } from "../types";
+import { CreateAlertElement } from "../type/AlertTypes";
 
 let elementId = 1;
 export default function () {

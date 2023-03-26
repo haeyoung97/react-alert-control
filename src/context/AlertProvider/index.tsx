@@ -10,7 +10,7 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import { CreateAlertElement } from "../../types";
+import { CreateAlertElement } from "../../type/AlertTypes";
 
 export const AlertContext = createContext<{
   mount(id: string, element: ReactNode): void;
