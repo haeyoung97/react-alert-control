@@ -1,13 +1,12 @@
-import OpenAlert from "../../utils/OpenAlert";
-import useAlert from "../../hooks/useAlert";
+import withAlert from "../../component/withAlert";
 
-const index = () => {
-  const alert = useAlert();
+const index = (props) => {
+  const { OpenAlert } = props;
   return (
     <div>
       <button
         onClick={() => {
-          OpenAlert("확인합니다.", alert).then((res) => {
+          OpenAlert("확인합니다.").then((res) => {
             console.log("res", res);
           });
         }}
@@ -18,4 +17,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default withAlert(index);

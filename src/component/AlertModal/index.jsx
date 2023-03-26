@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+
 import { ModalContent, ModalOverlay } from "./styles";
 
 const index = (props) => {
